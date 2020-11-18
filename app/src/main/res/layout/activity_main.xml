@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btn_web"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button_plus"
+        android:padding="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_option"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="28dp"
+        android:background="@drawable/button_option"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/misaki" />
+
+    <ImageView
+        android:id="@+id/hand"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="104dp"
+
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/misaki_hand" />
+<!--
+    <ImageView
+        android:id="@+id/bubble"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100sp"
+        android:layout_marginBottom="225dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/main_bubble"
+        app:layout_constraintBottom_toBottomOf="@+id/m_tabHost"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_option" />-->
+
+    <TabHost
+        android:id="@+id/m_tabHost"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_option"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="80dp"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <Button
+                            android:id="@+id/btn_end"
+                            android:layout_width="164dp"
+                            android:layout_height="91dp"
+
+                            android:layout_marginTop="28dp"
+                            android:background="@drawable/new_end"
+                            android:fontFamily="@font/cookierun_balck"
+
+                            android:textColor="@color/colorAccentRed"
+                            android:textSize="24dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/btn_start"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_start"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <Button
+                            android:id="@+id/btn_start"
+                            android:layout_width="164dp"
+                            android:layout_height="91dp"
+
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="84dp"
+                            android:layout_weight="2"
+                            android:background="@drawable/new_start"
+                            android:fontFamily="@font/cookierun_balck"
+                            android:gravity="left"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="24dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorwhite"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <EditText
+                                android:id="@+id/now_st"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/instruct"
+                                android:layout_marginStart="44dp"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/cookierun_rugr"
+                                android:hint="현재 스태"
+                                android:inputType="number"
+                                android:textSize="14dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/instruct" />
+
+
+                            <EditText
+                                android:id="@+id/max_st"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/instruct"
+                                android:layout_toRightOf="@+id/div"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/cookierun_rugr"
+                                android:hint=" 최대치"
+                                android:inputType="number"
+                                android:textSize="14dp"
+                                app:layout_constraintStart_toEndOf="@+id/div"
+                                app:layout_constraintTop_toBottomOf="@+id/instruct" />
+
+                            <Switch
+                                android:id="@+id/bar_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/result_st"
+                                android:layout_marginStart="28dp"
+                                android:layout_toRightOf="@+id/on_off_bar"
+                                app:layout_constraintStart_toEndOf="@+id/on_off_bar"
+                                app:layout_constraintTop_toTopOf="@+id/on_off_bar" />
+
+                            <Switch
+                                android:id="@+id/bar_work_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/on_off_bar"
+                                android:layout_marginStart="16dp"
+                                android:layout_toRightOf="@+id/bar_work"
+                                app:layout_constraintStart_toEndOf="@+id/bar_work"
+                                app:layout_constraintTop_toTopOf="@+id/bar_work" />
+
+                            <TextView
+                                android:id="@+id/instruct"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="44dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="스태미너 기록"
+                                android:textColor="@android:color/black"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/div"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/instruct"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_toRightOf="@+id/now_st"
+                                android:text="/"
+                                android:textSize="18dp"
+                                app:layout_constraintStart_toEndOf="@+id/now_st"
+                                app:layout_constraintTop_toBottomOf="@+id/instruct" />
+
+                            <TextView
+                                android:id="@+id/result_st"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/now_st"
+
+                                android:layout_marginStart="44dp"
+                                android:fontFamily="@font/cookierun_rugr"
+                                android:text="남은 시간을 알려드려요"
+                                android:textColor="@android:color/black"
+                                android:textSize="18dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/now_st" />
+
+                            <TextView
+                                android:id="@+id/on_off_bar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/result_st"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="상태창에 스태미너 표시하기"
+                                android:textColor="@android:color/black"
+                                android:textSize="18dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/result_st" />
+
+                            <TextView
+                                android:id="@+id/bar_work"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/on_off_bar"
+                                android:layout_marginStart="52dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="상태창으로 밀리시타 실행하기"
+                                android:textColor="@android:color/black"
+                                android:textSize="18dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/on_off_bar" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="80dp"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <Button
+                            android:id="@+id/btn_calcu"
+                            android:layout_width="164dp"
+                            android:layout_height="91dp"
+
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="144dp"
+                            android:background="@drawable/new_caclu"
+                            android:fontFamily="@font/cookierun_balck"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorwhite"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:layout_editor_absoluteX="0dp">
+
+
+                            <EditText
+                                android:id="@+id/et_now_score"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/e_run_tv"
+                                android:layout_marginStart="36dp"
+                                android:layout_toRightOf="@id/et_now_tv"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/cookierun_rugr"
+                                android:hint="                   "
+                                android:inputType="number"
+                                app:layout_constraintStart_toEndOf="@+id/et_now_tv"
+                                app:layout_constraintTop_toTopOf="@+id/et_now_tv" />
+
+                            <EditText
+                                android:id="@+id/et_target_score"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/et_now_score"
+                                android:layout_marginStart="44dp"
+                                android:layout_toRightOf="@id/et_target_tv"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/cookierun_rugr"
+                                android:hint="                  "
+                                android:inputType="number"
+                                app:layout_constraintStart_toEndOf="@+id/et_target_tv"
+                                app:layout_constraintTop_toTopOf="@+id/et_target_tv" />
+
+                            <EditText
+                                android:id="@+id/et_coin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/et_target_score"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="8dp"
+                                android:layout_toRightOf="@id/et_coin_tv"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/cookierun_rugr"
+                                android:hint="          "
+                                android:inputType="number"
+                                app:layout_constraintStart_toEndOf="@+id/et_coin_tv"
+                                app:layout_constraintTop_toTopOf="@+id/et_coin_tv" />
+
+                            <Switch
+                                android:id="@+id/e_type_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="16dp"
+                                android:layout_toRightOf="@+id/e_inst_tv"
+                                app:layout_constraintStart_toEndOf="@+id/e_inst_tv"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Switch
+                                android:id="@+id/e_run_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/e_type_switch"
+                                android:layout_marginStart="16dp"
+                                android:layout_toRightOf="@+id/e_run_tv"
+                                app:layout_constraintStart_toEndOf="@+id/e_run_tv"
+                                app:layout_constraintTop_toTopOf="@+id/e_run_tv" />
+
+                            <TextView
+                                android:id="@+id/e_inst_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="36dp"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="이벤트 타입 : Theater"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/e_run_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/e_inst_tv"
+                                android:layout_marginStart="36dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="이벤트  런   : 영업런 !"
+                                android:textColor="@android:color/black"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/e_inst_tv" />
+
+                            <TextView
+                                android:id="@+id/et_now_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/e_run_tv"
+                                android:layout_marginStart="36dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="현재 이벤트 점수"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/e_run_tv" />
+
+                            <TextView
+                                android:id="@+id/et_target_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/et_now_score"
+                                android:layout_marginStart="36dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="목표 이벤트 점수"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/et_now_tv" />
+
+                            <TextView
+                                android:id="@+id/et_coin_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/et_target_score"
+                                android:layout_marginStart="36dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/cookierun_balck"
+                                android:text="재화 갯수"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/et_target_tv" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Tomenog"
+            android:backgroundTint="@color/Tomenog"
+
+            />
+    </TabHost>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
